@@ -13,7 +13,7 @@ def generate_diff(file_path1, file_path2):
     with open(file_path1) as f1, open(file_path2) as f2:
         f1 = json.load(f1)
         f2 = json.load(f2)
-        keys = sorted(f1|f2)
+        keys = sorted(f1 | f2)
         result = "{\n"
         for k in keys:
             if k in set(f1.keys()) & set(f2.keys()):
