@@ -23,6 +23,7 @@ jobs:
     - name: Analysing the code with Python linters
       run: |
         make lint
+        make test
     - name: Test & publish code coverage
       uses: paambaati/codeclimate-action@v3.0.0
       env:
