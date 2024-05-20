@@ -1,5 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/R3D3r3d3/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/R3D3r3d3/python-project-50/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/34a63e80f06af6bc440f/maintainability)](https://codeclimate.com/github/R3D3r3d3/gendiff-hexlet/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/34a63e80f06af6bc440f/test_coverage)](https://codeclimate.com/github/R3D3r3d3/gendiff-hexlet/test_coverage)
 
 ## USAGE
 
