@@ -9,6 +9,7 @@ def bool_to_lower(val):
     return val
 
 
+# flake8: noqa: C901
 def generate_diff(file_path1, file_path2):
     try:
         f1 = parse_data(file_path1)
