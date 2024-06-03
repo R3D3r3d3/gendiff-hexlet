@@ -8,15 +8,22 @@ FLAT_JSON1 = os.path.join(CURRENT_PATH, "fixtures/file1.json")
 FLAT_JSON2 = os.path.join(CURRENT_PATH, "fixtures/file2.json")
 FLAT_YML1 = os.path.join(CURRENT_PATH, "fixtures/file1.yml")
 FLAT_YML2 = os.path.join(CURRENT_PATH, "fixtures/file2.yml")
-CORRECT_FLAT_RES = os.path.join(CURRENT_PATH, "fixtures/compare_file1_file2.txt")
+NESTED_JSON1 = os.path.join(CURRENT_PATH, "fixtures/nested_file1.json")
+NESTED_JSON2 = os.path.join(CURRENT_PATH, "fixtures/nested_file2.json")
+NESTED_YML1 = os.path.join(CURRENT_PATH, "fixtures/nested_file1.yml")
+NESTED_YML2 = os.path.join(CURRENT_PATH, "fixtures/nested_file2.yml")
+CORRECT_FLAT_RES = os.path.join(CURRENT_PATH, "fixtures/compared_file1_file2.txt")
+CORRECT_NESTED_RES = os.path.join(CURRENT_PATH, "fixtures/compared_nested_file1_file2.txt")
 NOT_EXISTED_FILE = os.path.join(CURRENT_PATH, "fixtures/file13895y23.yml")
 
 
 @pytest.mark.parametrize(\
         "file1, file2, correct_res",\
         [ \
-                (FLAT_JSON1, FLAT_JSON2, CORRECT_FLAT_RES), \
-                (FLAT_YML1, FLAT_YML2, CORRECT_FLAT_RES)\
+                (FLAT_JSON1, FLAT_JSON2, CORRECT_FLAT_RES),\
+                (FLAT_YML1, FLAT_YML2, CORRECT_FLAT_RES),\
+                (NESTED_JSON1, NESTED_JSON2, CORRECT_NESTED_RES),\
+                (NESTED_YML1, NESTED_YML2, CORRECT_NESTED_RES)\
                 ]\
         )
 def test_gendiff_flat_jsons(file1, file2, correct_res):
