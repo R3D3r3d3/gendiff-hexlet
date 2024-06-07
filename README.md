@@ -5,7 +5,9 @@
 
 ## USAGE
 
-you have 2 JSON files 
+if you want to compare 2 JSON files 
+
+1. For example 2 flat JSON:
 
 file_1.json:
 ```{
@@ -38,3 +40,20 @@ bash
 + verbose: true
 }
  ```
+
+2. Also you can compare flat YML, nested JSON, nested YML files and receive results
+in stylish, plain text or in json:
+```
+>>>gendiff file1.yml file2.yml -f plain
+Property 'common.follow' was added with value: false
+Property 'common.setting2' was removed
+Property 'common.setting3' was updated. From true to null
+Property 'common.setting4' was added with value: 'blah blah'
+Property 'common.setting5' was added with value: [complex value]
+Property 'common.setting6.doge.wow' was updated. From '' to 'so much'
+Property 'common.setting6.ops' was added with value: 'vops'
+Property 'group1.baz' was updated. From 'bas' to 'bars'
+Property 'group1.nest' was updated. From [complex value] to 'str'
+Property 'group2' was removed
+Property 'group3' was added with value: [complex value]
+```
