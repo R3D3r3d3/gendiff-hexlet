@@ -27,4 +27,6 @@ def plain_helper(val):
 def repr_helper(val):
     if val in ("null", "true", "false", "[complex value]"):
         return val
+    if isinstance(val, str) and val.isdigit():
+        return val
     return f"'{val}'"
