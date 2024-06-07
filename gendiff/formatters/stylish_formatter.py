@@ -1,4 +1,4 @@
-from gendiff.helpers import bool_to_str_lower
+from gendiff.formatters.helpers import stylish_helper
 
 
 def stylish_diff(data, indent_level=0):
@@ -16,11 +16,11 @@ def stylish_diff(data, indent_level=0):
             result += f'{indent}  {dct["name"]}: {data_nested}\n'
         if dct["status"] in signs.keys():
             sign = signs.get(dct["status"])
-            value = bool_to_str_lower(dct["data"], indent)
+            value = stylish_helper(dct["data"], indent)
             result += f'{indent}{sign} {dct["name"]}: {value}\n'
         if dct["status"] == "changed":
-            value_before = bool_to_str_lower(dct["data_before"], indent)
-            value_after = bool_to_str_lower(dct["data_after"], indent)
+            value_before = stylish_helper(dct["data_before"], indent)
+            value_after = stylish_helper(dct["data_after"], indent)
             ind_1 = ("", " ")[bool(value_before)]
             ind_2 = ("", " ")[bool(value_after)]
             result += f'{indent}- {dct["name"]}:{ind_1}{value_before}\n'

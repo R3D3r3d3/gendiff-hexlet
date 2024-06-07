@@ -1,9 +1,10 @@
-from gendiff.stylish_formatter import stylish_diff
+from gendiff.formatters.stylish_formatter import stylish_diff
+from gendiff.formatters.plain_formatter import plain_diff
 from gendiff.data_parser import parse_data
 from gendiff.diff import get_diff
 
 
-def generate_diff(file_path1, file_path2):
+def generate_diff(file_path1, file_path2, format_name="stylish"):
     try:
         f1 = parse_data(file_path1)
         f2 = parse_data(file_path2)
@@ -12,4 +13,6 @@ def generate_diff(file_path1, file_path2):
     except ValueError as e:
         return str(e)
     data_diff = get_diff(f1, f2)
+    if format_name == "plain":
+        return plain_diff(data_diff)
     return stylish_diff(data_diff)
