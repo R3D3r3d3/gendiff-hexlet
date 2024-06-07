@@ -15,15 +15,15 @@ CORRECT_PLAIN_NESTED_RES = os.path.join(CURRENT_PATH,
 NOT_EXISTED_FILE = os.path.join(CURRENT_PATH, "fixtures/file13895y23.yml")
 
 
-@pytest.mark.parametrize(\
-        "file1, file2, correct_res, formatter",\
-        [ \
-                (NESTED_JSON1, NESTED_JSON2, CORRECT_NESTED_RES, "stylish"),\
-                (NESTED_YML1, NESTED_YML2, CORRECT_NESTED_RES, "stylish"),\
-                (NESTED_YML1, NESTED_YML2, CORRECT_PLAIN_NESTED_RES, "plain"),\
-                (NESTED_JSON1, NESTED_JSON2, CORRECT_PLAIN_NESTED_RES, "plain")\
-                ]\
-        )
+@pytest.mark.parametrize(
+    "file1, file2, correct_res, formatter",
+    [
+        (NESTED_JSON1, NESTED_JSON2, CORRECT_NESTED_RES, "stylish"),
+        (NESTED_YML1, NESTED_YML2, CORRECT_NESTED_RES, "stylish"),
+        (NESTED_YML1, NESTED_YML2, CORRECT_PLAIN_NESTED_RES, "plain"),
+        (NESTED_JSON1, NESTED_JSON2, CORRECT_PLAIN_NESTED_RES, "plain")
+    ]
+)
 def test_gendiff_flat_jsons(file1, file2, correct_res, formatter):
     with open(correct_res, encoding="utf-8") as f:
         expected = f.read()
@@ -31,9 +31,10 @@ def test_gendiff_flat_jsons(file1, file2, correct_res, formatter):
 
 
 def test_gendiff_unsupported_file_type():
-    assert generate_diff(NESTED_JSON1, CORRECT_PLAIN_NESTED_RES) == "Unsupported file format"
+    assert generate_diff(NESTED_JSON1, CORRECT_PLAIN_NESTED_RES) == \
+           "Unsupported file format"
 
 
 def test_gendiff_file_not_exist():
-    assert generate_diff(NESTED_JSON1, NOT_EXISTED_FILE) == "One or both files not found"
-
+    assert generate_diff(NESTED_JSON1, NOT_EXISTED_FILE) == \
+           "One or both files not found"
