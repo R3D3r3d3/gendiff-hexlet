@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "gendiff-hexlet-r3d3"
+name = "hexlet-code"
 version = "0.1.0"
 description = "Compares two configuration files and shows a difference."
 authors = ["R3D3 <spoked-medals-0@icloud.com>"]
